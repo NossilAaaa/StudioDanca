@@ -4,6 +4,7 @@
  */
 package projeto.studio.danca;
 
+import org.junit.Test;
 import projeto.studio.danca.dao.PersistenciaJPA;
 
 /**
