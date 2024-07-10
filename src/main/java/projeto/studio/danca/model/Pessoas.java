@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 
 
@@ -18,16 +20,29 @@ import javax.persistence.Temporal;
  *
  * @author 20212PF.CC0020
  */
-abstract class Pessoas implements Serializable {
+@Entity 
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)//notação usada para classes que irão fornecer herança
+public abstract class Pessoas implements Serializable{
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)//id sequencial
     private Integer id;
-    private String nome;
-    private String fone;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Calendar dataAniver;
-    private String email;
-    private String endereco;
     
+    @Column(name = "Nome")
+    private String nome;
+    
+    @Column(name = "Telefone")
+    private String telefone;
+    
+    @Column(name = "Aniversario")
+    private Calendar data_aniversario;
+    
+    @Column(name = "E-mail")
+    private String email;
+    
+    @Column(name = "Endereço")
+    private String endereco;
+
     public Integer getId() {
         return id;
     }
@@ -44,20 +59,20 @@ abstract class Pessoas implements Serializable {
         this.nome = nome;
     }
 
-    public String getFone() {
-        return fone;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setFone(String fone) {
-        this.fone = fone;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
-    public Calendar getDataAniver() {
-        return dataAniver;
+    public Calendar getData_aniversario() {
+        return data_aniversario;
     }
 
-    public void setDataAniver(Calendar dataAniver) {
-        this.dataAniver = dataAniver;
+    public void setData_aniversario(Calendar data_aniversario) {
+        this.data_aniversario = data_aniversario;
     }
 
     public String getEmail() {
@@ -75,7 +90,6 @@ abstract class Pessoas implements Serializable {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    
     
     
 }

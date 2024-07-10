@@ -10,6 +10,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -17,13 +21,43 @@ import javax.persistence.Id;
  */
 @Entity
 public class Pagamento implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
+
+    @Column(nullable = false, name = "dataVcto")
+    @Temporal(TemporalType.TIMESTAMP)
     private Calendar dataVcto;
+
+    @Column(name = "Valor", columnDefiniton = "decimal(12,2)")
     private Double valor;
+
+    @Column(name = "Data_Pagamento")
+    @Temporal(TemporalType.TIMESTAMP)
     private Calendar dataPgto;
+
+    @Column(name = "Valor_Pagamento", columnDefinition = "decimal(12,2)")
     private Double valorPgto;
+
+    @ManyToOne
+    @JoinColumn(name = "contratos", referencedColemnName = "id", nullable = false)
+    private Contratos contratos
+
+    public Contratos getContratos() {
+        return contratos;
+    }
+
+    public void setContratos(Contratos contratos) {
+        this.contratos = contratos;
+
+    public void GerarPagamento(Integer mes_ref){
+       if (mes_ref <=dataVcto.get(Calendar.DAY_OF_MONTH)){
+            setDataPgto(Calendar.getInstance());
+       } else {
+             setDataPgto(null);
+       }
+   }     
 
     public Integer getId() {
         return id;
@@ -64,7 +98,5 @@ public class Pagamento implements Serializable {
     public void setValorPgto(Double valorPgto) {
         this.valorPgto = valorPgto;
     }
-    
-    
-    
+
 }

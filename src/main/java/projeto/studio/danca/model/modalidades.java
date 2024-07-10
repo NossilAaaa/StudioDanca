@@ -8,17 +8,30 @@ package projeto.studio.danca.model;
  *
  * @author aliss
  */
-public class modalidades {
-    
-    private Integer id;
-    private String descricao;
 
-    public modalidades(Integer id, String descricao) {
-        this.id = id;
-        this.descricao = descricao;
-    }
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+
+@Entity
+//@Table (name="outro_nome")muda o nome da coluna no BD
+public class Modalidades implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)/
+    private Integer id;
+
     
-    
+    @Column(nullable = false, length = 155, name = "Descrição")
     
     public Integer getId() {
         return id;
@@ -35,8 +48,5 @@ public class modalidades {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    
-    
-    
+
 }
