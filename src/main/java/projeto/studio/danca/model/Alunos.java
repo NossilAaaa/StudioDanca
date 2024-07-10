@@ -16,31 +16,45 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+
 @Entity
-public class Alunos extends Pessoas implements Serializable{
-    @Column(name = "Data_inicio")
+public class Alunos extends Pessoas{
+    
+    @Column(nullable = true)
     @Temporal(TemporalType.DATE)
     private Calendar datainicio;
     
     @Column(name = "DataPgto")
-    
     private Integer dataPgto;
 
-    public Calendar getData_inicio() {
+    public Alunos() {
+        
+    }
+
+    public Alunos(Calendar datainicio, Integer dataPgto) {
+        this.datainicio = datainicio;
+        this.dataPgto = dataPgto;
+    }
+
+    public Calendar getDatainicio() {
         return datainicio;
     }
 
-    public void setData_inicio(Calendar data_inicio) {
-        this.datainicio = data_inicio;
+    public void setDatainicio(Calendar datainicio) {
+        this.datainicio = datainicio;
     }
 
-    public Integer getData_Pgto() {
+    public Integer getDataPgto() {
         return dataPgto;
     }
 
-    public void setData_Pgto(Integer data_Pgto) {
-        this.dataPgto = data_Pgto;
+    public void setDataPgto(Integer dataPgto) {
+        this.dataPgto = dataPgto;
     }
+
+    
+    
+    
     
     
     

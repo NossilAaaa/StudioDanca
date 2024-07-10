@@ -32,6 +32,10 @@ public class FolhaPgmt  implements Serializable{
     @Column(name = "Valor_a_Receber")
     private Double valor_receber;
     
+    @ManyToOne
+    @JoinColumn(name = "Professores")
+    private Professores professor;
+    
     public void calcularFolhames(){
        
     }
@@ -58,6 +62,14 @@ public class FolhaPgmt  implements Serializable{
 
     public void setValor_receber(Double valor_receber) {
         this.valor_receber = valor_receber;
+    }
+
+    public Professores getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professores professor) {
+        this.professor = professor;
     }
     
     

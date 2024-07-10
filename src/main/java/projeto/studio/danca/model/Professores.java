@@ -31,11 +31,16 @@ public class Professores extends Pessoas implements Serializable{
     @Temporal(TemporalType.DATE)//dia, mes e ano
     private Calendar data_adm;
     
-    @OneToMany
-    private List<FolhaPgmt> F_pagamento= new ArrayList();
+    @Column
+    @Temporal(TemporalType.DATE)//dia, mes e ano
+    private Calendar data_aniver;
     
     @OneToMany
-    private List<modalidades> modalidade= new ArrayList();
+    private Collection<FolhaPgmt> F_pagamento;
+    
+    @ManyToMany
+    private Collection<modalidades> modalidade;
+    
   
     public Calendar getData_adm() {
         return data_adm;
@@ -43,6 +48,30 @@ public class Professores extends Pessoas implements Serializable{
 
     public void setData_adm(Calendar data_adm) {
         this.data_adm = data_adm;
+    }
+
+    public Calendar getData_aniver() {
+        return data_aniver;
+    }
+
+    public void setData_aniver(Calendar data_aniver) {
+        this.data_aniver = data_aniver;
+    }
+
+    public Collection<FolhaPgmt> getF_pagamento() {
+        return F_pagamento;
+    }
+
+    public void setF_pagamento(List<FolhaPgmt> F_pagamento) {
+        this.F_pagamento = F_pagamento;
+    }
+
+    public Collection<modalidades> getmodalidade() {
+        return modalidade;
+    }
+
+    public void setmodalidade(List<modalidades> modalidade) {
+        this.modalidade = modalidade;
     }
     
     

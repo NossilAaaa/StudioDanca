@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.TemporalType;
 
 
 
@@ -36,22 +37,23 @@ public abstract class Pessoas implements Serializable{
     private String telefone;
     
     @Column(name = "Aniversario")
+    @Temporal(TemporalType.DATE)
     private Calendar data_aniversario;
     
-    @Column(name = "E-mail")
+    @Column(name = "E_mail")
     private String email;
     
     @Column(name = "Endereço")
     private String endereco;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
+//
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
+//
     public String getNome() {
         return nome;
     }
@@ -59,7 +61,7 @@ public abstract class Pessoas implements Serializable{
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+//
     public String getTelefone() {
         return telefone;
     }
@@ -67,7 +69,7 @@ public abstract class Pessoas implements Serializable{
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
+//
     public Calendar getData_aniversario() {
         return data_aniversario;
     }
@@ -75,7 +77,7 @@ public abstract class Pessoas implements Serializable{
     public void setData_aniversario(Calendar data_aniversario) {
         this.data_aniversario = data_aniversario;
     }
-
+//
     public String getEmail() {
         return email;
     }
@@ -83,7 +85,7 @@ public abstract class Pessoas implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
-
+//
     public String getEndereco() {
         return endereco;
     }
@@ -91,6 +93,6 @@ public abstract class Pessoas implements Serializable{
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    
+//    
     
 }

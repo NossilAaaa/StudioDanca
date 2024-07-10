@@ -53,11 +53,7 @@ public class Contratos implements Serializable{
     private FormaPgto FormaPgto;
     
 
-    public Contratos() {
- 
-        this.dataInicio = Calendar.getInstance();
-    }
-
+   
     public Contratos(Integer id, Calendar dataInicio, Double valorDesconto, Alunos aluno, ItensContr ItensContr, FormaPgto FormaPgto) {
         this.id = id;
         this.dataInicio = dataInicio;
@@ -65,6 +61,10 @@ public class Contratos implements Serializable{
         this.aluno = aluno;
         this.ItensContr = ItensContr;
         this.FormaPgto = FormaPgto;
+    }
+
+    public Contratos() {
+        
     }
 
     public Integer getId() {
