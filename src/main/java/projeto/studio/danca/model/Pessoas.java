@@ -6,6 +6,7 @@ package projeto.studio.danca.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,11 +22,11 @@ import javax.persistence.InheritanceType;
  * @author 20212PF.CC0020
  */
 @Entity 
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)//notação usada para classes que irão fornecer herança
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Pessoas implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)//id sequencial
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     
     @Column(name = "Nome")

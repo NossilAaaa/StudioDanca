@@ -20,7 +20,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class FolhaPagamento  implements Serializable{
+public class FolhaPgmt  implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

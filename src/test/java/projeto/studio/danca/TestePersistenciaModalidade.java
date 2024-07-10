@@ -9,7 +9,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import projeto.studio.danca.dao.PersistenciaJPA;
-import projeto.studio.danca.model.Modalidades;
+import projeto.studio.danca.model.modalidades;
 
 /**
  *
@@ -36,7 +36,7 @@ public class TestePersistenciaModalidade {
     //
      @Test
      public void testePersistenciaProduto() throws Exception {
-         Modalidades m = new Modalidades();
+         modalidades m = new modalidades();
          m.setDescricao("Modalidade: Street");
 //         
        
@@ -45,7 +45,7 @@ public class TestePersistenciaModalidade {
          jpa.persist(m);
          
          // buscar objeto persistido
-         Modalidades persistidoModalidade = (Modalidades)jpa.find(Modalidades.class, m.getId());
+         modalidades persistidoModalidade = (modalidades)jpa.find(modalidades.class, m.getId());
          
          // verificar se objeto persistido é igual ao criado
          

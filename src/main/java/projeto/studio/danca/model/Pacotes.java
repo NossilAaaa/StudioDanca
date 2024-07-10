@@ -33,12 +33,12 @@ public class Pacotes implements Serializable{
     
     @ManyToOne
     @JoinColumn(name = "modalidades_id")
-    private Modalidades modalidade;
+    private modalidades modalidade;
 
     public Pacotes() {
     }
 
-    public Pacotes(Integer id, String descricao, Double valor, Modalidades modalidade) {
+    public Pacotes(Integer id, String descricao, Double valor, modalidades modalidade) {
         this.id = id;
         this.descricao = descricao;
         this.valor = valor;
@@ -69,11 +69,11 @@ public class Pacotes implements Serializable{
         this.valor = valor;
     }
 
-    public Modalidades getModalidade() {
+    public modalidades getModalidade() {
         return modalidade;
     }
 
-    public void setModalidade(Modalidades modalidade) {
+    public void setModalidade(modalidades modalidade) {
         this.modalidade = modalidade;
     }
     

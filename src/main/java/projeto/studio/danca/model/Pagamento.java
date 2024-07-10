@@ -6,6 +6,7 @@ package projeto.studio.danca.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +31,7 @@ public class Pagamento implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar dataVcto;
 
-    @Column(name = "Valor", columnDefiniton = "decimal(12,2)")
+    @Column(name = "Valor", precision = 10, scale = 2)
     private Double valor;
 
     @Column(name = "Data_Pagamento")
@@ -41,8 +42,8 @@ public class Pagamento implements Serializable {
     private Double valorPgto;
 
     @ManyToOne
-    @JoinColumn(name = "contratos", referencedColemnName = "id", nullable = false)
-    private Contratos contratos
+    @JoinColumn(name = "contratos", nullable = false)
+    private Contratos contratos;
 
     public Contratos getContratos() {
         return contratos;
@@ -50,16 +51,17 @@ public class Pagamento implements Serializable {
 
     public void setContratos(Contratos contratos) {
         this.contratos = contratos;
-
+    }
+        /*
     public void GerarPagamento(Integer mes_ref){
        if (mes_ref <=dataVcto.get(Calendar.DAY_OF_MONTH)){
             setDataPgto(Calendar.getInstance());
        } else {
              setDataPgto(null);
        }
-   }     
+   }  */   
 
-    public Integer getId() {
+    public Integer getId(Integer id){
         return id;
     }
 

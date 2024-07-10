@@ -9,8 +9,11 @@ package projeto.studio.danca.model;
  * @author aliss
  */ 
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -29,10 +32,10 @@ public class Professores extends Pessoas implements Serializable{
     private Calendar data_adm;
     
     @OneToMany
-    private List<FolhaPagamento> F_pagamento= new ArrayList();
+    private List<FolhaPgmt> F_pagamento= new ArrayList();
     
     @OneToMany
-    private List<Modalidades> modalidade= new ArrayList();
+    private List<modalidades> modalidade= new ArrayList();
   
     public Calendar getData_adm() {
         return data_adm;

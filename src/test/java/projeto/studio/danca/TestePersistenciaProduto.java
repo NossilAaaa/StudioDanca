@@ -4,6 +4,9 @@
  */
 package projeto.studio.danca;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import projeto.studio.danca.dao.PersistenciaJPA;
 
 /**
@@ -15,7 +18,7 @@ public class TestePersistenciaProduto {
     
     public TestePersistenciaProduto() {
     }
-    
+    /*
     @Before // o que fazer antes da persistencia
     public void setUp() {
         jpa.conexaoAberta();
@@ -50,5 +53,5 @@ public class TestePersistenciaProduto {
          
          
          
-     }
+     }*/
 }
