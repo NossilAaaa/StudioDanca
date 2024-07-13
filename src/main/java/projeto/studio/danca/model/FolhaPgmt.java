@@ -18,6 +18,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class FolhaPgmt  implements Serializable{
@@ -27,6 +29,7 @@ public class FolhaPgmt  implements Serializable{
     private Integer id;
     
     @Column(name = "Data_Pgto")
+    @Temporal(TemporalType.DATE)
     private Calendar data_pgto;
     
     @Column(name = "Valor_a_Receber")

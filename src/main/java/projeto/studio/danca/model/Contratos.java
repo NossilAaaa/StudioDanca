@@ -107,11 +107,6 @@ public class Contratos implements Serializable{
         return ItensContr;
     }
 
-    
-
-    
-
-
     public Alunos getAluno() {
         return aluno;
     }
