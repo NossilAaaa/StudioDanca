@@ -7,10 +7,11 @@ package projeto.studio.danca.dao;
 
 import projeto.studio.danca.model.modalidades;
 import java.util.List;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+import projeto.studio.danca.model.Professores;
 
 /**
  *
@@ -28,42 +29,99 @@ public class PersistenciaJPA implements InterfacePersisttencia {
 
     @Override
     public Boolean conexaoAberta() {
+        if (entity == null || !entity.isOpen()) {
+            entity = factory.createEntityManager();
+        }
         return entity.isOpen();
     }
 
     @Override
     public void fecharConexao() {
-        entity.close();
+        if (entity != null && entity.isOpen()) {
+            entity.close();
+        }
     }
 
     @Override
     public Object find(Class c, Object id) throws Exception {
-        return entity.find(c, id);
+        EntityManager em = getEntityManager();
+        return em.find(c, id);//encontra um determinado registro 
     }
 
-    @Override
-    public void persist(Object o) throws Exception {
-        entity.getTransaction().begin();
-        entity.persist(o);
-        entity.getTransaction().commit();
+    public void persist(Object o) {
+        EntityManager em = getEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.persist(o);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            throw e;
+        }
+    }
+
+    public EntityManager getEntityManager() {
+        if (entity == null || !entity.isOpen()) {
+            entity = factory.createEntityManager();
+        }
+        return entity;
     }
 
     @Override
     public void remover(Object o) throws Exception {
-        entity.getTransaction().begin();
-        entity.remove(o);
-        entity.getTransaction().commit();
+//        No método remover, antes de chamar remove, usamos merge se o objeto não estiver gerenciado.
+        EntityManager em = getEntityManager();
+        try {
+            em.getTransaction().begin();
+            if (!em.contains(o)) {
+                o = em.merge(o); // Anexa o objeto ao contexto de persistência, se necessário
+            }
+            em.remove(o);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            throw e;
+        }
     }
 
-    public List<modalidades> getModalidades() {
-        List<modalidades> modalidades = null;
+    /*public List<modalidades> getModalidades() {
+        List<modalidades> modalidade = null;
         try {
-            modalidades = entity.createQuery("SELECT m FROM modalidades m", modalidades.class).getResultList();
+            modalidade = entity.createQuery("SELECT m FROM modalidades m", modalidades.class).getResultList();
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Erro ao obter modalidades: " + e.getMessage());
         }
-        return modalidades;
+        return modalidade;
     }
-
+     */
+    public List<modalidades> getModalidades() {
+        EntityManager em = getEntityManager();
+        try {
+            TypedQuery<modalidades> query
+                    = em.createQuery("SELECT m FROM modalidades m", modalidades.class);
+            return query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    public List<Professores> getProfessores() {
+        EntityManager em = getEntityManager();
+        try {
+            TypedQuery<Professores> query = 
+                    em.createQuery("SELECT m FROM Professores m", 
+                            Professores.class);
+            return query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
 }

@@ -16,30 +16,26 @@ import projeto.studio.danca.model.modalidades;
  */
 public class TelaModalidades extends javax.swing.JFrame {
 
-    private PersistenciaJPA persistencia;
-    private DefaultListModel<String> listModel;
+    PersistenciaJPA persistencia;
 
     public TelaModalidades() {
         initComponents();
-        persistencia = new PersistenciaJPA();
-        listModel = new DefaultListModel<>();
-        lstModalidades.setModel(listModel);
         carregarModalidades();
-
     }
 
     private void carregarModalidades() {
-        try {
-            listModel.clear();
-            List<modalidades> modalidades = persistencia.getModalidades();
-            for (modalidades modalidade : modalidades) {
-                listModel.addElement(modalidade.getDescricao());
-                //System.out.println(modalidade.getDescricao());
+       
+            lstModalidades.clearSelection();
+            persistencia = new PersistenciaJPA();
+            persistencia.conexaoAberta();
+            List<modalidades> modal = persistencia.getModalidades();
+            System.out.println("Lista" +modal);
+            DefaultListModel modeLista = new DefaultListModel<>();
+            for(modalidades m: modal){
+                modeLista.addElement(m);
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Erro ao carregar modalidades: " + e.getMessage());
-            e.printStackTrace();  
-        }
+            lstModalidades.setModel(modeLista);
+            persistencia.fecharConexao();
     }
 
     /**
@@ -54,14 +50,11 @@ public class TelaModalidades extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         lstModalidades = new javax.swing.JList<>();
         btnNovo = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnRemover = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lstModalidades.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(lstModalidades);
 
         btnNovo.setText("Nova Modalidade");
@@ -71,27 +64,46 @@ public class TelaModalidades extends javax.swing.JFrame {
             }
         });
 
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        btnRemover.setText("Remover");
+        btnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnNovo, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                    .addComponent(btnRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(102, Short.MAX_VALUE))
         );
 
@@ -99,61 +111,74 @@ public class TelaModalidades extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        String modDesc = JOptionPane.showInputDialog(rootPane, "Informe o nome da modalidade:", "Nova modalidade");
-
-        if (modDesc != null && !modDesc.trim().isEmpty()) {
-            modalidades mod = new modalidades();
-            mod.setDescricao(modDesc);
-
-            PersistenciaJPA jpa = new PersistenciaJPA();
-
-            try {
-                if (jpa.conexaoAberta()) {
-                    jpa.persist(mod);
-                    carregarModalidades();
-                } else {
-                    JOptionPane.showMessageDialog(this, "Não foi possível abrir a conexão com o banco de dados.");
-                }
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, "Erro ao adicionar modalidade: " + ex.getMessage());
-                ex.printStackTrace();  // Para ajudar no diagnóstico durante o desenvolvimento
-            } finally {
-                jpa.fecharConexao();
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "O nome da modalidade não pode ser vazio.");
-        }
+        modalidades x = new modalidades();
+        x.setDescricao(JOptionPane.showInputDialog("Informe qual a será a nova modalidade"));
+        persistencia.conexaoAberta();
+        persistencia.persist(x);
+        persistencia.fecharConexao();
+        
+        carregarModalidades();
 
     }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        modalidades modalidadeSelecionada
+                = lstModalidades.getSelectedValue();
+        if (modalidadeSelecionada != null) {
+
+            try {
+                persistencia = new PersistenciaJPA();
+                persistencia.conexaoAberta();
+
+                modalidades modalidadePersistido
+                        = (modalidades) persistencia.find(modalidades.class,
+                                modalidadeSelecionada.getId());
+                modalidadePersistido.setDescricao(
+                        JOptionPane.showInputDialog(rootPane,
+                                "Informe a descrição da modalidade: ",
+                                modalidadeSelecionada.getDescricao()));
+                persistencia.persist(modalidadePersistido);
+                persistencia.fecharConexao();
+                carregarModalidades();
+
+            } catch (Exception e) {
+                System.err.println("Erro ao editar modalidade: " + e.getMessage());
+            } finally {
+                persistencia.fecharConexao();
+            }
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
+        modalidades modalidadeSelecionada = lstModalidades.getSelectedValue();
+        if (modalidadeSelecionada != null) {
+            int confirmacaoDel = JOptionPane.showConfirmDialog(rootPane,
+                    "Tem certeza que deseja remover modalidade " + modalidadeSelecionada.getDescricao());
+            if (confirmacaoDel == JOptionPane.YES_OPTION) {
+                try {
+                    persistencia = new PersistenciaJPA();
+                    persistencia.conexaoAberta();
+                    persistencia.remover(modalidadeSelecionada);
+                    persistencia.fecharConexao();
+                    carregarModalidades();
+
+                } catch (Exception e) {
+                    System.err.println("Erro ao excluir modalidade: " + e.getMessage());
+                } finally {
+                    persistencia.fecharConexao();
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane,
+                    "Nenhuma modalidade selecionada");
+        }
+
+    }//GEN-LAST:event_btnRemoverActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaModalidades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaModalidades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaModalidades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaModalidades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaModalidades().setVisible(true);
@@ -162,8 +187,10 @@ public class TelaModalidades extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnNovo;
+    private javax.swing.JButton btnRemover;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> lstModalidades;
+    private javax.swing.JList<modalidades> lstModalidades;
     // End of variables declaration//GEN-END:variables
 }
