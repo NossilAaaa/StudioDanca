@@ -5,6 +5,9 @@
  */
 package projeto.studio.danca.dao;
 
+import projeto.studio.danca.model.modalidades;
+import java.util.List;
+import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -15,7 +18,6 @@ import javax.persistence.Persistence;
  */
 public class PersistenciaJPA implements InterfacePersisttencia {
 
-   
     EntityManager entity;
     EntityManagerFactory factory;
 
@@ -23,10 +25,7 @@ public class PersistenciaJPA implements InterfacePersisttencia {
         factory = Persistence.createEntityManagerFactory("br.edu.ifsul.bcc.too.avaliacao.segundaetapa.semestre_2023_2.modelo_projeto.studio.danca_jar_1.0-SNAPSHOTPU");
         entity = factory.createEntityManager();
     }
-    
-    
-    
-    
+
     @Override
     public Boolean conexaoAberta() {
         return entity.isOpen();
@@ -56,5 +55,15 @@ public class PersistenciaJPA implements InterfacePersisttencia {
         entity.getTransaction().commit();
     }
 
-   
+    public List<modalidades> getModalidades() {
+        List<modalidades> modalidades = null;
+        try {
+            modalidades = entity.createQuery("SELECT m FROM modalidades m", modalidades.class).getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Erro ao obter modalidades: " + e.getMessage());
+        }
+        return modalidades;
+    }
+
 }
