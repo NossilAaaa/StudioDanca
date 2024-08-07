@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="projeto.studio.danca.TestePersistenciaModalidade" time="4.678" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="projeto.studio.danca.TestePersistenciaModalidade" time="3.545" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\aliss\AppData\Local\Temp\surefire11843716096575541794\surefirebooter-20240730205500653_3.jar C:\Users\aliss\AppData\Local\Temp\surefire11843716096575541794 2024-07-30T20-55-00_335-jvmRun1 surefire-20240730205500653_1tmp surefire_0-20240730205500653_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\aliss\AppData\Local\Temp\surefire2658970438086606478\surefirebooter-20240806203402700_3.jar C:\Users\aliss\AppData\Local\Temp\surefire2658970438086606478 2024-08-06T20-34-02_465-jvmRun1 surefire-20240806203402700_1tmp surefire_0-20240806203402700_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="projeto.studio.danca.TestePersistenciaModalidade"/>
     <property name="surefire.test.class.path" value="C:\Users\aliss\OneDrive\Documentos\NetBeansProjects\StudioDanca\target\test-classes;C:\Users\aliss\OneDrive\Documentos\NetBeansProjects\StudioDanca\target\classes;C:\Users\aliss\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.2.Final\hibernate-jpa-2.1-api-1.0.2.Final.jar;C:\Users\aliss\.m2\repository\org\hibernate\hibernate-core\5.3.3.Final\hibernate-core-5.3.3.Final.jar;C:\Users\aliss\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar;C:\Users\aliss\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\aliss\.m2\repository\org\javassist\javassist\3.23.1-GA\javassist-3.23.1-GA.jar;C:\Users\aliss\.m2\repository\net\bytebuddy\byte-buddy\1.8.13\byte-buddy-1.8.13.jar;C:\Users\aliss\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\aliss\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\aliss\.m2\repository\org\jboss\jandex\2.0.5.Final\jandex-2.0.5.Final.jar;C:\Users\aliss\.m2\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;C:\Users\aliss\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\aliss\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;C:\Users\aliss\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.0.4.Final\hibernate-commons-annotations-5.0.4.Final.jar;C:\Users\aliss\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\aliss\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\aliss\.m2\repository\org\postgresql\postgresql\42.2.24\postgresql-42.2.24.jar;C:\Users\aliss\.m2\repository\org\checkerframework\checker-qual\3.5.0\checker-qual-3.5.0.jar;C:\Users\aliss\.m2\repository\org\hibernate\hibernate-entitymanager\4.3.1.Final\hibernate-entitymanager-4.3.1.Final.jar;C:\Users\aliss\.m2\repository\org\jboss\logging\jboss-logging-annotations\1.2.0.Beta1\jboss-logging-annotations-1.2.0.Beta1.jar;C:\Users\aliss\.m2\repository\javax\xml\bind\jaxb-api\2.3.0\jaxb-api-2.3.0.jar;C:\Users\aliss\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.core\2.7.12\org.eclipse.persistence.core-2.7.12.jar;C:\Users\aliss\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.asm\9.4.0\org.eclipse.persistence.asm-9.4.0.jar;C:\Users\aliss\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.antlr\2.7.12\org.eclipse.persistence.antlr-2.7.12.jar;C:\Users\aliss\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.jpa\2.7.12\org.eclipse.persistence.jpa-2.7.12.jar;C:\Users\aliss\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.jpa.jpql\2.7.12\org.eclipse.persistence.jpa.jpql-2.7.12.jar;C:\Users\aliss\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.moxy\2.7.12\org.eclipse.persistence.moxy-2.7.12.jar;C:\Users\aliss\.m2\repository\org\eclipse\persistence\jakarta.persistence\2.2.3\jakarta.persistence-2.2.3.jar;C:\Users\aliss\.m2\repository\org\eclipse\persistence\org.eclipse.persistence.jpa.modelgen.processor\2.7.12\org.eclipse.persistence.jpa.modelgen.processor-2.7.12.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\aliss\AppData\Local\Temp\surefire11843716096575541794\surefirebooter-20240730205500653_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\aliss\AppData\Local\Temp\surefire2658970438086606478\surefirebooter-20240806203402700_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
@@ -60,391 +60,58 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testePersistenciaContrato_Pagamento" classname="projeto.studio.danca.TestePersistenciaModalidade" time="0.01">
-    <system-out><![CDATA[Hibernate: 
-    
-    alter table Contratos 
-       drop constraint FKrt0o8lv2yoy5h15qcsymkbpgo
-Hibernate: 
-    
-    alter table Contratos 
-       drop constraint FK7ijee99npsulfodg10d9699x
-Hibernate: 
-    
-    alter table FolhaPgmt 
-       drop constraint FKtkkw8ksbgctbji2v945hoh3b9
-Hibernate: 
-    
-    alter table ItensContr 
-       drop constraint FKn3q9i6v3x9slu8vcfxr6nnakl
-Hibernate: 
-    
-    alter table Pacotes 
-       drop constraint FKkfw7l8lsbsbujqgnh6od19xhx
-Hibernate: 
-    
-    alter table Pagamento 
-       drop constraint FK19hy9t8b4a2snwiyggt0dl9hm
-Hibernate: 
-    
-    alter table Professores_FolhaPgmt 
-       drop constraint FKeky9q52krdd5c38bo718ln3ur
-Hibernate: 
-    
-    alter table Professores_FolhaPgmt 
-       drop constraint FKfue0mv9lh0judwldyym1cv0e5
-Hibernate: 
-    
-    alter table Professores_modalidades 
-       drop constraint FKa97gmb8cp7ym4i9yvud7tdmwv
-Hibernate: 
-    
-    alter table Professores_modalidades 
-       drop constraint FK4y79rs6wo7uo2xb8wofc072sh
-Hibernate: 
-    
-    drop table if exists Alunos cascade
-Hibernate: 
-    
-    drop table if exists Contratos cascade
-Hibernate: 
-    
-    drop table if exists FolhaPgmt cascade
-Hibernate: 
-    
-    drop table if exists ItensContr cascade
-Hibernate: 
-    
-    drop table if exists modalidades cascade
-Hibernate: 
-    
-    drop table if exists Pacotes cascade
-Hibernate: 
-    
-    drop table if exists Pagamento cascade
-Hibernate: 
-    
-    drop table if exists Professores cascade
-Hibernate: 
-    
-    drop table if exists Professores_FolhaPgmt cascade
-Hibernate: 
-    
-    drop table if exists Professores_modalidades cascade
-Hibernate: 
-    
-    drop sequence if exists hibernate_sequence
-Hibernate: create sequence hibernate_sequence start 1 increment 1
-Hibernate: 
-    
-    create table Alunos (
-       id int4 not null,
-        Aniversario date,
-        E_mail varchar(255),
-        Endereço varchar(255),
-        Nome varchar(255),
-        Telefone varchar(255),
-        DataPgto int4,
-        datainicio date,
-        primary key (id)
-    )
-Hibernate: 
-    
-    create table Contratos (
-       id int4 not null,
-        FormaPgto varchar(255) not null,
-        dataInicio date not null,
-        valorDesconto float8 not null,
-        itens_id int4,
-        aluno_id int4 not null,
-        primary key (id)
-    )
-Hibernate: 
-    
-    create table FolhaPgmt (
-       id int4 not null,
-        Data_Pgto date,
-        Valor_a_Receber float8,
-        Professores int4,
-        primary key (id)
-    )
-Hibernate: 
-    
-    create table ItensContr (
-       idContrato int4 not null,
-        pacote_id int4 not null,
-        primary key (idContrato)
-    )
-Hibernate: 
-    
-    create table modalidades (
-       id int4 not null,
-        descricao varchar(120) not null,
-        primary key (id)
-    )
-Hibernate: 
-    
-    create table Pacotes (
-       id int4 not null,
-        descricao varchar(120) not null,
-        valor float8 not null,
-        modalidades_id int4,
-        primary key (id)
-    )
-Hibernate: 
-    
-    create table Pagamento (
-       id int4 not null,
-        Data_Pagamento timestamp,
-        dataVcto timestamp not null,
-        Valor float8,
-        Valor_Pagamento decimal(12,2),
-        contratos int4 not null,
-        primary key (id)
-    )
-Hibernate: 
-    
-    create table Professores (
-       id int4 not null,
-        Aniversario date,
-        E_mail varchar(255),
-        Endereço varchar(255),
-        Nome varchar(255),
-        Telefone varchar(255),
-        Data_Admissão date,
-        data_aniver date,
-        primary key (id)
-    )
-Hibernate: 
-    
-    create table Professores_FolhaPgmt (
-       Professores_id int4 not null,
-        F_pagamento_id int4 not null
-    )
-Hibernate: 
-    
-    create table Professores_modalidades (
-       Professores_id int4 not null,
-        modalidade_id int4 not null
-    )
-Hibernate: 
-    
-    alter table Professores_FolhaPgmt 
-       add constraint UK_khl6hvliwe7mmv0u8p7ft1rkh unique (F_pagamento_id)
-Hibernate: 
-    
-    alter table Contratos 
-       add constraint FKrt0o8lv2yoy5h15qcsymkbpgo 
-       foreign key (itens_id) 
-       references ItensContr
-Hibernate: 
-    
-    alter table Contratos 
-       add constraint FK7ijee99npsulfodg10d9699x 
-       foreign key (aluno_id) 
-       references Alunos
-Hibernate: 
-    
-    alter table FolhaPgmt 
-       add constraint FKtkkw8ksbgctbji2v945hoh3b9 
-       foreign key (Professores) 
-       references Professores
-Hibernate: 
-    
-    alter table ItensContr 
-       add constraint FKn3q9i6v3x9slu8vcfxr6nnakl 
-       foreign key (pacote_id) 
-       references Pacotes
-Hibernate: 
-    
-    alter table Pacotes 
-       add constraint FKkfw7l8lsbsbujqgnh6od19xhx 
-       foreign key (modalidades_id) 
-       references modalidades
-Hibernate: 
-    
-    alter table Pagamento 
-       add constraint FK19hy9t8b4a2snwiyggt0dl9hm 
-       foreign key (contratos) 
-       references Contratos
-Hibernate: 
-    
-    alter table Professores_FolhaPgmt 
-       add constraint FKeky9q52krdd5c38bo718ln3ur 
-       foreign key (F_pagamento_id) 
-       references FolhaPgmt
-Hibernate: 
-    
-    alter table Professores_FolhaPgmt 
-       add constraint FKfue0mv9lh0judwldyym1cv0e5 
-       foreign key (Professores_id) 
-       references Professores
-Hibernate: 
-    
-    alter table Professores_modalidades 
-       add constraint FKa97gmb8cp7ym4i9yvud7tdmwv 
-       foreign key (modalidade_id) 
-       references modalidades
-Hibernate: 
-    
-    alter table Professores_modalidades 
-       add constraint FK4y79rs6wo7uo2xb8wofc072sh 
-       foreign key (Professores_id) 
-       references Professores
-Hibernate: 
-    select
-        nextval ('hibernate_sequence')
-Hibernate: 
-    /* insert projeto.studio.danca.model.modalidades
-        */ insert 
-        into
-            modalidades
-            (descricao, id) 
-        values
-            (?, ?)
-Hibernate: 
-    select
-        nextval ('hibernate_sequence')
-Hibernate: 
-    /* insert projeto.studio.danca.model.Pacotes
-        */ insert 
-        into
-            Pacotes
-            (descricao, modalidades_id, valor, id) 
-        values
-            (?, ?, ?, ?)
-Hibernate: 
-    select
-        nextval ('hibernate_sequence')
-Hibernate: 
-    /* insert projeto.studio.danca.model.ItensContr
-        */ insert 
-        into
-            ItensContr
-            (pacote_id, idContrato) 
-        values
-            (?, ?)
-Hibernate: 
-    select
-        nextval ('hibernate_sequence')
-Hibernate: 
-    /* insert projeto.studio.danca.model.Alunos
-        */ insert 
-        into
-            Alunos
-            (Aniversario, E_mail, Endereço, Nome, Telefone, DataPgto, datainicio, id) 
-        values
-            (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        nextval ('hibernate_sequence')
-Hibernate: 
-    /* insert projeto.studio.danca.model.Contratos
-        */ insert 
-        into
-            Contratos
-            (FormaPgto, itens_id, aluno_id, dataInicio, valorDesconto, id) 
-        values
-            (?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        nextval ('hibernate_sequence')
-Hibernate: 
-    /* insert projeto.studio.danca.model.Pagamento
-        */ insert 
-        into
-            Pagamento
-            (contratos, Data_Pagamento, dataVcto, Valor, Valor_Pagamento, id) 
-        values
-            (?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        nextval ('hibernate_sequence')
-Hibernate: 
-    /* insert projeto.studio.danca.model.Professores
-        */ insert 
-        into
-            Professores
-            (Aniversario, E_mail, Endereço, Nome, Telefone, Data_Admissão, data_aniver, id) 
-        values
-            (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    /* insert collection
-        row projeto.studio.danca.model.Professores.modalidade */ insert 
-        into
-            Professores_modalidades
-            (Professores_id, modalidade_id) 
-        values
-            (?, ?)
-Hibernate: 
-    select
-        nextval ('hibernate_sequence')
-Hibernate: 
-    /* insert projeto.studio.danca.model.FolhaPgmt
-        */ insert 
-        into
-            FolhaPgmt
-            (Data_Pgto, Professores, Valor_a_Receber, id) 
-        values
-            (?, ?, ?, ?)
-Hibernate: 
-    /* insert collection
-        row projeto.studio.danca.model.Professores.F_pagamento */ insert 
-        into
-            Professores_FolhaPgmt
-            (Professores_id, F_pagamento_id) 
-        values
-            (?, ?)
+  <testcase name="testePersistenciaContrato_Pagamento" classname="projeto.studio.danca.TestePersistenciaModalidade" time="0.115">
+    <system-out><![CDATA[Hibernate: select nextval ('hibernate_sequence')
+Hibernate: insert into tb_modalidade (modalidade_descricao, modalidade_professor, modalidade_id) values (?, ?, ?)
+Hibernate: select nextval ('hibernate_sequence')
+Hibernate: insert into Pacotes (descricao, modalidades_id, valor, id) values (?, ?, ?, ?)
+Hibernate: select nextval ('hibernate_sequence')
+Hibernate: insert into ItensContr (pacote_id, idContrato) values (?, ?)
+Hibernate: select nextval ('hibernate_sequence')
+Hibernate: insert into Alunos (Aniversario, E_mail, Endereço, Nome, Telefone, DataPgto, datainicio, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select nextval ('hibernate_sequence')
+Hibernate: insert into Contratos (FormaPgto, itens_id, aluno_id, dataInicio, valorDesconto, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select nextval ('hibernate_sequence')
+Hibernate: insert into Pagamento (contratos, Data_Pagamento, dataVcto, Valor, Valor_Pagamento, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select nextval ('hibernate_sequence')
+Hibernate: insert into Professores (Aniversario, E_mail, Endereço, Nome, Telefone, Data_Admissão, data_aniver, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into Professores_tb_modalidade (Professores_id, modalidade_modalidade_id) values (?, ?)
+Hibernate: select nextval ('hibernate_sequence')
+Hibernate: insert into FolhaPgmt (Data_Pgto, Professores, Valor_a_Receber, id) values (?, ?, ?, ?)
+Hibernate: insert into Professores_FolhaPgmt (Professores_id, F_pagamento_id) values (?, ?)
 ]]></system-out>
-    <system-err><![CDATA[jul. 30, 2024 8:55:01 PM org.hibernate.ejb.HibernatePersistence logDeprecation
+    <system-err><![CDATA[ago. 06, 2024 8:34:03 PM org.hibernate.ejb.HibernatePersistence logDeprecation
 WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-jul. 30, 2024 8:55:01 PM org.hibernate.ejb.HibernatePersistence logDeprecation
+ago. 06, 2024 8:34:03 PM org.hibernate.ejb.HibernatePersistence logDeprecation
 WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
-jul. 30, 2024 8:55:02 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+ago. 06, 2024 8:34:03 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
 INFO: HHH000204: Processing PersistenceUnitInfo [
 	name: br.edu.ifsul.bcc.too.avaliacao.segundaetapa.semestre_2023_2.modelo_projeto.studio.danca_jar_1.0-SNAPSHOTPU
 	...]
-jul. 30, 2024 8:55:02 PM org.hibernate.Version logVersion
+ago. 06, 2024 8:34:04 PM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {5.3.3.Final}
-jul. 30, 2024 8:55:02 PM org.hibernate.cfg.Environment <clinit>
+ago. 06, 2024 8:34:04 PM org.hibernate.cfg.Environment <clinit>
 INFO: HHH000206: hibernate.properties not found
-jul. 30, 2024 8:55:02 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+ago. 06, 2024 8:34:04 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
 INFO: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-jul. 30, 2024 8:55:02 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+ago. 06, 2024 8:34:04 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-jul. 30, 2024 8:55:02 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+ago. 06, 2024 8:34:04 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/Studio_DB]
-jul. 30, 2024 8:55:02 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+ago. 06, 2024 8:34:04 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001001: Connection properties: {password=****, user=postgres}
-jul. 30, 2024 8:55:02 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+ago. 06, 2024 8:34:04 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001003: Autocommit mode: false
-jul. 30, 2024 8:55:02 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+ago. 06, 2024 8:34:04 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
 INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
-jul. 30, 2024 8:55:03 PM org.hibernate.dialect.Dialect <init>
+ago. 06, 2024 8:34:04 PM org.hibernate.dialect.Dialect <init>
 INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-jul. 30, 2024 8:55:03 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
+ago. 06, 2024 8:34:05 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
 INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-jul. 30, 2024 8:55:03 PM org.hibernate.type.BasicTypeRegistry register
-INFO: HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5707c1cb
-jul. 30, 2024 8:55:05 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5befbac1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-jul. 30, 2024 8:55:05 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@688a2c09] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-jul. 30, 2024 8:55:05 PM org.hibernate.tool.schema.internal.SchemaCreatorImpl applyImportSources
-INFO: HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@6587305a'
-jul. 30, 2024 8:55:05 PM org.hibernate.engine.internal.StatisticalLoggingSessionEventListener end
-INFO: Session Metrics {
-    161200 nanoseconds spent acquiring 9 JDBC connections;
-    194500 nanoseconds spent releasing 9 JDBC connections;
-    1881100 nanoseconds spent preparing 18 JDBC statements;
-    6048900 nanoseconds spent executing 8 JDBC statements;
-    18734300 nanoseconds spent executing 10 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    72701800 nanoseconds spent executing 9 flushes (flushing a total of 44 entities and 4 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
+ago. 06, 2024 8:34:05 PM org.hibernate.type.BasicTypeRegistry register
+INFO: HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6d511b5f
+ago. 06, 2024 8:34:06 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2dbfcf7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 ]]></system-err>
   </testcase>
 </testsuite>

@@ -110,7 +110,7 @@ public class PersistenciaJPA implements InterfacePersisttencia {
             return null;
         }
     }
-    
+    /*
     public List<Professores> getProfessores() {
         EntityManager em = getEntityManager();
         try {
@@ -123,5 +123,18 @@ public class PersistenciaJPA implements InterfacePersisttencia {
             return null;
         }
     }
-    
+    */
+    public List<Professores> getProfessores() {
+    EntityManager em = getEntityManager();
+    try {
+        TypedQuery<Professores> query = em.createQuery("SELECT p FROM Professores p", Professores.class);
+        List<Professores> professores = query.getResultList();
+        System.out.println("Professores encontrados: " + professores.size());
+        return professores;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null;
+    }
+}
+
 }

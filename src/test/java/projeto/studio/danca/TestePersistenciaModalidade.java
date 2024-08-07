@@ -31,7 +31,7 @@ public class TestePersistenciaModalidade {
         jpa.fecharConexao();
     }
 
-    //@Test
+    @Test
     public void testePersistenciaContrato_Pagamento() throws Exception {
         // Criar e persistir Modalidades
         modalidades m = new modalidades();
