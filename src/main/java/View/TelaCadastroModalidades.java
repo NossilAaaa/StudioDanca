@@ -23,6 +23,7 @@ public class TelaCadastroModalidades extends javax.swing.JDialog {
     public TelaCadastroModalidades(java.awt.Frame parent, boolean mod) {
         super(parent, mod);
         initComponents();
+        preencheListaProf();
     }
     
     public void preencheListaProf() {
@@ -30,32 +31,24 @@ public class TelaCadastroModalidades extends javax.swing.JDialog {
     List<Professores> listProf = null;
 
     try {
-        // Abre a conexão com o banco de dados
         persistencia.conexaoAberta();
         
-        // Busca a lista de professores
         listProf = persistencia.getProfessores();
-
-        // Verifica se a lista está sendo populada
         if (listProf != null) {
             System.out.println("Número de professores encontrados: " + listProf.size());
         } else {
             System.out.println("A lista de professores está nula.");
         }
-
-        // Adiciona professores ao JComboBox
         for (Professores p : listProf) {
             boxProfessor.addItem(p);
         }
-
-        // Fecha a conexão com o banco de dados
         persistencia.fecharConexao();
     } catch (Exception e) {
-        System.out.println("Erro ao buscar professores: \n" + e.getMessage());
+        System.out.println("Erro ao buscar professores: " + e.getMessage());
         e.printStackTrace();
     }
 
-    // Verifica se a modalidade não é nula
+
     if (modal != null) {
         txtDescr.setText(modal.getDescricao());
 

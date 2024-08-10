@@ -88,17 +88,6 @@ public class PersistenciaJPA implements InterfacePersisttencia {
         }
     }
 
-    /*public List<modalidades> getModalidades() {
-        List<modalidades> modalidade = null;
-        try {
-            modalidade = entity.createQuery("SELECT m FROM modalidades m", modalidades.class).getResultList();
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Erro ao obter modalidades: " + e.getMessage());
-        }
-        return modalidade;
-    }
-     */
     public List<modalidades> getModalidades() {
         EntityManager em = getEntityManager();
         try {
